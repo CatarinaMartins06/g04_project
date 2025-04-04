@@ -1,30 +1,10 @@
 db = 'business.db'
 
-#Uncomment to test class Person (select next 4 lines and press ctrl-1)
+#Uncomment to test class Actors (select next 4 lines and press ctrl-1)
 from actors import Actors
 test_class = Actors
 ob = '100;Antonio Silva;1966-03-12;PORT'
 db = 'base.db'
-
-#Uncomment to test class Cliente (select next two lines and press ctrl-1)
-# from classes.cliente import Cliente
-# test_class = Cliente
-# ob = '600;Xavier;1958-03-20;5000.0'
-
-#Uncomment to test class Product
-# from classes.product import Product
-# test_class = Product
-# ob='Product1;10.9;100'
-
-#Uncomment to test class Customer_login
-# from classes.customer import Customer
-# test_class = Customer
-
-#Uncomment to test class Order
-# from classes.customerorder import ustomerOrder
-# from classes.customer import Customer
-# Customer.read('data/business.db')
-# test_class = Order
 
 import datetime
 
