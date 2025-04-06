@@ -1,7 +1,3 @@
-"""
-@author: António Brito / Carlos Bragança (2025)
-#objective: class Order
-"""""
 # Class Studios
 # Import the generic class
 from gclass import Gclass
