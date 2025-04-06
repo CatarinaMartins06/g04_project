@@ -1,8 +1,3 @@
-"""
-@author: António Brito / Carlos Bragança (2025)
-#objective: class OrderProduct
-"""""
-# Class Cast
 from movies import Movies
 from actors import Actors
 # Import the generic class
