@@ -74,6 +74,7 @@ class Gclass:
         obj = cls.obj[p]
         id = cls.att[0][1:]
         command = f'DELETE FROM {cls.__name__} WHERE {id}={cls.conv(obj,id,p)}'
+        print(command)
         cls.sqlexe(command)
         cls.lst.remove(p)
         del cls.obj[p]
@@ -92,12 +93,11 @@ class Gclass:
     def update(cls, p):
         obj = cls.obj[p]
         command = f'UPDATE "{cls.__name__}" SET'
-        for att in cls.att[1:]:
+        for att in cls.att:
             value = getattr(obj, att)
             command += f' {att[1:]} = {cls.conv(obj, att, value)},'
-        id = cls.att[0][1:]
-        command = command[:-1] + f' WHERE {id} = {cls.conv(obj, id, p)}'
-        print(command)
+            id = cls.att[0][1:]
+            command = command[:-1] + f' WHERE {id} = {cls.conv(obj, id, p)}'
         cls.sqlexe(command)
     @staticmethod
     def conv(obj, att, value):

@@ -1,7 +1,7 @@
 # Class Movies
 # Import the generic class
-from gclass import Gclass
-from studios import Studios
+from classes.gclass import Gclass
+from classes.studios import Studios
 
 class Movies(Gclass):
     obj = dict()
@@ -13,7 +13,7 @@ class Movies(Gclass):
     # Class header title
     header = 'Movies'
     # field description for use in, for example, input form
-    des = ['Id','Title','Genre','Release_year', 'Studios_id']
+    des = ['Id','Title','Genre','Release year', 'Studios id']
     # Constructor: Called when an object is instantiated
     def __init__(self,id,title,genre,release_year,studios_id):
         super().__init__()
@@ -26,7 +26,6 @@ class Movies(Gclass):
             self._genre = genre
             self._release_year = release_year
             self._studios_id = studios_id
-            # Add the new object to the Customer's list
             Movies.obj[id] = self
             Movies.lst.append(id)
         else:

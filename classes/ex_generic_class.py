@@ -1,7 +1,6 @@
-db = 'business.db'
+db = 'base.db'
 
-#Uncomment to test class Actors (select next 4 lines and press ctrl-1)
-from actors import Actors
+from classes.actors import Actors
 test_class = Actors
 ob = '100;Antonio Silva;1966-03-12;PORT'
 db = 'base.db'
@@ -9,8 +8,8 @@ db = 'base.db'
 import datetime
 
 #Reads the test_class.csv file
-a = test_class.read('data/' + db)
-print(a)
+db_file = r'C:\Users\catar\OneDrive\FEUP\2 semestre\PCII\g04_project\data\base.db'
+test_class.read(db_file)
 
 op = ''
 while op != 'q':
@@ -113,7 +112,7 @@ while op != 'q':
     elif op == 's':
         # Sort products by attribute in ascending order
         attrib = input('sort by attribute name:')
-        if '_' + attrib in list(pxi.__dict__.keys()):
+        if '_' + attrib in list(p.__dict__.keys()):
             reverse = False
             if input('Reverse (False):'):
                 reverse = True

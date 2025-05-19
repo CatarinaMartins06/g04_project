@@ -1,16 +1,17 @@
-from movies import Movies
-from actors import Actors
+# Class Cast
+from classes.movies import Movies
+from classes.actors import Actors
 # Import the generic class
-from gclass import Gclass
+from classes.gclass import Gclass
 
 class Cast(Gclass):
     obj = dict()
     lst = list()
     pos = 0
     sortkey = ''
-    att = ['_id', '_movies_id','_actors_id']
+    att = ['_id', '_movies_id','_actors_id', '_role']
     header = 'Cast'
-    des = ['Id','Movies_id','Actors_id']
+    des = ['Id','Movies id','Actors id', 'Role']
     def __init__(self, id, movies_id, actors_id, role):
         super().__init__()
         movies_id = int(movies_id)
@@ -60,7 +61,3 @@ class Cast(Gclass):
     @role.setter
     def role(self, novo_role):
         self._role = novo_role
-
-
-
-        

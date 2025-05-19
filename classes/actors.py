@@ -1,6 +1,6 @@
 # Class Actors
 # Import the generic class
-from gclass import Gclass
+from classes.gclass import Gclass
 
 class Actors(Gclass):
     obj = dict()
@@ -8,11 +8,11 @@ class Actors(Gclass):
     pos = 0
     sortkey = ''
     # class attributes, identifier attribute 'id' must be the first on the list
-    att = ['_id','_name','_birthdate','_nationality', '_role']
-    # Class header title
+    att = ['_id','_name','_birthdate','_nationality']
+    # Class header name
     header = 'Actors'
     # field description for use in, for example, input form
-    des = ['Id','Name','Birthdate','Nationality', 'Role']
+    des = ['Id','Name','Birthdate','Nationality']
     # Constructor: Called when an object is instantiated
     def __init__(self,id,name,birthdate,nationality):
         super().__init__()
@@ -57,3 +57,5 @@ class Actors(Gclass):
     @nationality.setter
     def nationality(self, novo_nationality):
         self._nationality = novo_nationality
+
+    

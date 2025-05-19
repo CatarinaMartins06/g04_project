@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <h1 class="logo text-center">🎬 MovieManager</h1>
+    <nav>
+        <ul class="menu">
+            {% if ulogin == None %}
+                <li><a class="button" href="{{ url_for('login') }}">Login</a></li>
+            {% else %}
+                <li><a class="button" href="/gform/Actors">Actors</a></li>
+                <li><a class="button" href="/gform/Movies">Movies</a></li>
+                <li><a class="button" href="/gform/Studios">Studios</a></li>
+                <li><a class="button" href="/gform/Cast">Cast</a></li>
+                <li><a class="button" href="/Userlogin">Users</a></li>
+                <li><a class="button logout" href="/logoff">Logoff</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% if ulogin %}
+        <div class="text-center text-light mt-2">Logged in as: {{ ulogin }}</div>
+    {% endif %}
+</header>
+
+<div class="content container mt-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

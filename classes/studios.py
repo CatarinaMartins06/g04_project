@@ -1,6 +1,6 @@
 # Class Studios
 # Import the generic class
-from gclass import Gclass
+from classes.gclass import Gclass
 
 class Studios(Gclass):
     obj = dict()
@@ -13,6 +13,8 @@ class Studios(Gclass):
 
     def __init__(self, id, name, location):
         super().__init__()
+        id = int(id)
+        self._id = id
         self._name = name
         self._location = location
 
@@ -37,8 +39,10 @@ class Studios(Gclass):
 
     @property
     def location(self):
-        return self.location
+        return self._location
     
     @location.setter
     def location(self, novo_location):
-        self._id = novo_location
+        self._location = novo_location
+
+    
