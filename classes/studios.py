@@ -13,7 +13,7 @@ class Studios(Gclass):
 
     def __init__(self, id, name, location):
         super().__init__()
-        id = int(id)
+        id = Studios.get_id(id)
         self._id = id
         self._name = name
         self._location = location

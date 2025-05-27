@@ -63,7 +63,6 @@ def apps_subform(cname=""):
                 row = int(option.split("_")[1])
                 obj = cl.current()
                 lines = sbl.getlines(sbl.att[1],getattr(obj, cl.att[0]))
-                # print(row,lines[row])
                 sbl.remove(lines[row])
             elif option == "addrow":
                 butshow = "disabled"
@@ -71,11 +70,9 @@ def apps_subform(cname=""):
             elif option == "saverow":
                 obj = cl.current()
                 strobj = '0'
-                # strobj = getattr(obj, cl.att[0])
                 for i in range(1, len(sbl.att)):
                     strobj += ";" + request.form[sbl.att[i]]
                 objl = sbl.from_string(strobj)
-                # code = str(getattr(objl, sbl.att[0])) + str(getattr(objl, sbl.att[1]))
                 sbl.insert(objl.id)
             elif option == 'exit':
                 return render_template("index.html", ulogin=session.get("user"))

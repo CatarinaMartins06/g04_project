@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Number of Films per Studio</h2>
+        {{ plot_div_studios | safe }}
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>Top 10 Actors with the Most Appearances in Movies</h2>
+        {{ plot_div_actors | safe }}
+    </div>
+
+    <br>
+    <div style="text-align: center;">
+        <a class="button logout" href="/">Back</a>
+    </div>
+{% endblock %}

@@ -5,8 +5,9 @@ from classes.studios import Studios
 from classes.cast import Cast
 from classes.userlogin import Userlogin
 from datafile import filename
-from subs.apps_actors import apps_actors 
 from subs.apps_gform import apps_gform 
+from subs.apps_plot import apps_plot
+from subs.apps_plotly import apps_plotly
 from subs.apps_subform import apps_subform
 from subs.apps_userlogin import apps_userlogin
 
@@ -16,7 +17,7 @@ Studios.read(filename + "base.db")
 Movies.read(filename + "base.db")   
 Actors.read(filename + "base.db")
 Cast.read(filename + "base.db")  
-Userlogin.read(filename + 'business.db')
+Userlogin.read(filename + 'base.db')
 
 app.secret_key = 'BAD_SECRET_KEY'
 
@@ -43,10 +44,6 @@ def chklogin():
         return render_template("index.html", ulogin=session.get("user"))
     return render_template("login.html", user=user, password = password, ulogin=session.get("user"),resul = resul)
 
-#@app.route("/Actors", methods=["post","get"])
-#def actors():
-#    return apps_actors()
-
 @app.route("/gform/<cname>", methods=["post","get"])
 def gform(cname):
     return apps_gform(cname)
@@ -54,6 +51,14 @@ def gform(cname):
 @app.route("/subform/<cname>", methods=["post","get"])
 def subform(cname):
     return apps_subform(cname)
+
+@app.route("/plot", methods=["post","get"])
+def plot():
+    return apps_plot()
+
+@app.route("/plotly", methods=["post","get"])
+def plotly():
+    return apps_plotly()
 
 @app.route("/Userlogin", methods=["post","get"])
 def userlogin():

@@ -6,9 +6,33 @@
 
 {% block content %}
 
-    <div class="dados">
-        <br><br>
-            <h1>Welcome</h1>
+    <div class="grid-container">
+        <div class="grid-item">
+            <a href="/gform/Actors">
+                <img src="/static/images/Actors.png" alt="actors" width="200" height="200">
+            </a>
+            <h3>Actors</h3>
+        </div>
+        <div class="grid-item">
+            <a href="/gform/Movies">
+                <img src="/static/images/Movies.png" alt="movies" width="200" height="200">
+            </a>
+            <h3>Movies</h3>
+        </div>
+        <div class="grid-item">
+            <a href="/gform/Studios">
+                <img src="/static/images/Studios.png" alt="studios" width="200" height="200">
+            </a>
+            <h3>Studios</h3>
+        </div>
+        <div class="grid-item">
+            <a href="/gform/Cast">
+                <img src="/static/images/Cast.png" alt="cast" width="200" height="200">
+            </a>
+            <h3>Cast</h3>
+        </div>
     </div>
+
+
     
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div style="text-align:center;">
+        <h2>Number of Films per Studio</h2>
+        <img src="data:image/png;base64,{{ image1 }}" alt="Número de Filmes por Estúdio" style="max-width: 90%; height: auto;">
+    </div>
+
+    <br><br>
+
+    <div style="text-align:center;">
+        <h2>Top 10 Actors with the Most Appearances in Movies</h2>
+        <img src="data:image/png;base64,{{ image2 }}" alt="Top 10 Atores" style="max-width: 90%; height: auto;">
+    </div>
+
+    <br>
+
+    <div style="text-align: center;">
+        <a class="button logout" href="/">Back</a>
+    </div>
+{% endblock %}
